@@ -11,7 +11,7 @@ def create_party():
     else:
         _id = parties[-1]['id'] + 1
 
-    #if data['name'] == '' or data['address'] == '' or data['logo'] == '':
+
     if data.get('name','') == '' or data.get('address','')=='' or data.get('logo','')=='':
         return make_response(jsonify({
             "status":400,
