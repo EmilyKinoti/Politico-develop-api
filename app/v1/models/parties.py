@@ -10,3 +10,5 @@ class PoliticalParty:
         })
 
 
+    def get_all_parties(self,):
+        return(parties)

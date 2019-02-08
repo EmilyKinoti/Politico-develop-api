@@ -18,11 +18,6 @@ class BaseTest(unittest.TestCase):
             "hqAddress": "Location 1",
             "photoUrl":"photo/1"
         }
-
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
+        
     def tearDown(self):
         self.app = None
