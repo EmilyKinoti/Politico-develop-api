@@ -40,3 +40,18 @@ def get_all_parties():
         "status":200,
         "data": parties
     }), 200)
+
+
+@api.route('/parties/<int:party_id>', methods=['GET'])
+def get_single_party(party_id):
+    party=PoliticalParty.get_by_id(party_id)
+    if party == None:
+        return make_response(jsonify({
+        "status":404,
+        "error": 'party not found'
+        }), 404)
+    else:
+        return make_response(jsonify({
+            "status":200,
+            "party":party
+        }), 200)
