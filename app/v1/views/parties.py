@@ -10,9 +10,7 @@ def create_party():
         _id = 1
     else:
         _id = parties[-1]['id'] + 1
-
-
-    if data.get('name','') == '' or data.get('address','')=='' or data.get('logo','')=='':
+    if data.get('name','') == '' or data.get('hqAddress','')=='' or data.get('logoUrl','')=='':
         return make_response(jsonify({
             "status":400,
             "error": 'party name or hqadress or logo cannot be empty'
@@ -21,8 +19,8 @@ def create_party():
     new_party = {
         "id":_id,
         "name": data['name'],
-        "hqAddress": data['address'],
-        "logoUrl": data['logo']
+        "hqAddress": data['hqAddress'],
+        "logoUrl": data['logoUrl']
     }
 
     res = PoliticalParty().save_party(new_party)
@@ -32,3 +30,13 @@ def create_party():
         "status":201,
         "data": [res]
     }), 201)
+
+@api.route("/parties", methods=['GET'])
+def get_all_parties():
+
+    parties = PoliticalParty().get_all_parties()
+  
+    return make_response(jsonify({
+        "status":200,
+        "data": parties
+    }), 200)
