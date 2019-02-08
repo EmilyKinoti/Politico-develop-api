@@ -18,8 +18,6 @@ class BaseTest(unittest.TestCase):
             "hqAddress": "Location 1",
             "photoUrl":"photo/1"
         }
-
-       
-
+        
     def tearDown(self):
         self.app = None
