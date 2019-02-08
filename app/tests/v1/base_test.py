@@ -19,5 +19,10 @@ class BaseTest(unittest.TestCase):
             "photoUrl":"photo/1"
         }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     def tearDown(self):
         self.app = None
