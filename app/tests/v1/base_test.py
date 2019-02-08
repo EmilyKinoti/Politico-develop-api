@@ -19,5 +19,7 @@ class BaseTest(unittest.TestCase):
             "photoUrl":"photo/1"
         }
 
+       
+
     def tearDown(self):
         self.app = None
